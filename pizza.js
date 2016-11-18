@@ -17,10 +17,14 @@ constructor (s,mT,vT){
       return top.length*0.99;
     }
     if(top == this.veggieToppings){
-      return top.length*0.5;p
+      return top.length*0.5;
     }
   }
+  price(){
+    return this.sizeCost()+this.toppingCost();
+  }
   //type class functions below
-
-
+  static promotionalDeal(pizza,percent){
+    return pizza.price()*(1-(percent/100))
+  }
 }
